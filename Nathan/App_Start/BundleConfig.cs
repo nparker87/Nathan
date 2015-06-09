@@ -6,14 +6,14 @@
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            BundleTable.EnableOptimizations = true;
+            // BundleTable.EnableOptimizations = true;
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
-                "~/Content/Less.site.less"));
+                "~/Content/Less/Site.less"));
 
             bundles.Add(new ScriptBundle("~/Scripts").Include(
-                "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/Site.js"));
         }
     }
 }

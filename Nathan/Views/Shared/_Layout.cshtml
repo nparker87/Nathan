@@ -11,12 +11,22 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>Header</header>
+        <header>
+            <ul>
+                <li>Header</li>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
+                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+            </ul>
+        </header>
         <nav>Navigation</nav>
-        <div class="main">
+        <div id="main">
             @RenderBody()
         </div>
-        <footer>Footer</footer>
+        <footer>
+            Nathan Parker | Web Developer<br />
+            1101 N. Hamilton St. Apt I Richmond, VA 23221 | <a href="mailto:parkerjn2@vcu.edu">parkerjn2@@vcu.edu</a>
+        </footer>
     </div>
     @Scripts.Render("~/Scripts")
     @RenderSection("scripts", false)

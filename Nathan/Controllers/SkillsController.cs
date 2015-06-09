@@ -3,13 +3,13 @@
     using System.Web.Mvc;
     using ViewModels;
 
-    public class HomeController : BaseController
+    public class SkillsController : BaseController
     {
         public ActionResult Index()
         {
             var viewModel = new BaseViewModel
             {
-                CurrentTab = "Home"
+                CurrentTab = "Skills"
             };
             return View(viewModel);
         }
