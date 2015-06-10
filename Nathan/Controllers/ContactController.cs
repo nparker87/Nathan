@@ -7,7 +7,7 @@
     {
         public ActionResult Index()
         {
-            var viewModel = new BaseViewModel
+            var viewModel = new ContactViewModel
             {
                 CurrentTab = "Contact"
             };

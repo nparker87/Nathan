@@ -1,5 +1,40 @@
-﻿@{
+﻿@using Nathan.Helpers
+@model Nathan.ViewModels.ContactViewModel
+@{
     ViewBag.Title = "Contact";
 }
-
-<h2>Contact</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true).Raw()
+    <ul>
+        <li>
+            <fieldset>
+                <ul>
+                    <li>
+                        @Html.RequriedLabelFor(model => model.Email)
+                        @Html.TextBoxFor(mdoel => Model.Email)
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </li>
+                    <li>
+                        @Html.RequriedLabelFor(model => model.FirstName)
+                        @Html.TextBoxFor(mdoel => Model.FirstName)
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </li>
+                    <li>
+                        @Html.RequriedLabelFor(model => model.LastName)
+                        @Html.TextBoxFor(mdoel => Model.LastName)
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </li>
+                    <li>
+                        @Html.RequriedLabelFor(model => model.Message)
+                        @Html.TextAreaFor(mdoel => Model.Message)
+                        @Html.ValidationMessageFor(model => model.Message)
+                    </li>
+                    <li class="center">
+                        <input type="submit" value="Send Email" />
+                    </li>
+                </ul>
+            </fieldset>
+        </li>
+    </ul>
+}

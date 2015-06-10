@@ -22,6 +22,10 @@ body {
     background-color: @mainGreen;
 }
 
+ul {
+    list-style: none;
+}
+
 /**** Navigation ****/
 
 /**** Main Content ****/
@@ -35,8 +39,65 @@ body {
     text-align: center;
 }
 
+#main ul li {
+    padding: 5px;
+}
+
+#main ul li label {
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+    width: 95px;
+}
+
 /**** Footer ****/
 footer {
     padding-top: 50px;
     text-align: center;
+}
+
+/**** Misc ****/
+label.required span:after {
+    color: #FF0000;
+    content: "*";
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.main-left {
+    float: left;
+}
+
+.main-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Styles for validation helpers */
+.field-validation-error {
+    color: #FF0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    background-color: #FFEEEE;
+    border: 1px solid #FF0000;
+}
+
+.validation-summary-errors {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.validation-summary-valid {
+    display: none;
 }
