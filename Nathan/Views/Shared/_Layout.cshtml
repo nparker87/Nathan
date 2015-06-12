@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@model Nathan.ViewModels.BaseViewModel
 
 <!DOCTYPE html>
 <html>
@@ -10,16 +11,20 @@
     @RenderSection("Head", false)
 </head>
 <body>
-    <div class="wrapper">
-        <header>
+    <div id="wrapper">
+        <nav>
             <ul>
-                <li>Header</li>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Skills", "Index", "Skills")</li>
-                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                <li class="@(Model.CurrentTab == "Home" ? "selected" : "")">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="@(Model.CurrentTab == "Skills" ? "selected" : "")">
+                    @Html.ActionLink("Skills", "Index", "Skills")
+                </li>
+                <li class="@(Model.CurrentTab == "Contact" ? "selected" : "")">
+                    @Html.ActionLink("Contact", "Index", "Contact")
+                </li>
             </ul>
-        </header>
-        <nav>Navigation</nav>
+        </nav>
         <div id="main">
             @RenderBody()
         </div>

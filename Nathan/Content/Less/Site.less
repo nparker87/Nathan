@@ -27,12 +27,43 @@ ul {
 }
 
 /**** Navigation ****/
+nav ul {
+    font-size: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 21px;
+}
+
+nav ul li.selected,
+nav ul li:hover {
+    background-color: #FFFFFF;
+}
+
+nav ul li:hover a {
+    color: #000000;
+}
+
+nav ul li a {
+    display: block;
+    padding: 5px 15px 10px 15px;
+}
+
+nav ul li.selected a {
+    color: #000000;
+}
 
 /**** Main Content ****/
+#wrapper {
+    padding: 0 10%;
+}
+
 #main {
     background-color: #FFFFFF;
     color: #000000;
-    padding: 5px 50px;
+    padding: 5px 150px;
 }
 
 #main h2 {
