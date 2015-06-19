@@ -1,5 +1,6 @@
 ﻿namespace Nathan.Helpers
 {
+    using HtmlBuilders;
     using System;
     using System.Linq;
     using System.Linq.Expressions;
@@ -65,28 +66,30 @@
             return DatePicker(htmlHelper, expressionText, htmlHelper.ViewData.Eval(expressionText));
         }
 
-        public static MvcHtmlString RequriedLabelFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, object htmlAttributes = null)
+        public static MvcHtmlString InputFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, bool isRequired, bool isTextArea, object htmlAttributes = null)
         {
+            var parentLabel = new TagBuilder("label");
             var metadata = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
             var htmlFieldName = ExpressionHelper.GetExpressionText(expression);
             var labelText = metadata.DisplayName ?? metadata.PropertyName ?? htmlFieldName.Split('.').Last();
+            var span = new HtmlTag("span").Append(labelText);
+            var input = isTextArea ? new HtmlTag("textarea") : new HtmlTag("input").Type("text");
+
             if (String.IsNullOrEmpty(labelText))
             {
                 return MvcHtmlString.Empty;
             }
 
-            var tag = new TagBuilder("label");
-            tag.Attributes.Add("for", html.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldId(htmlFieldName));
-            tag.Attributes.Add("class", "required");
+            if (isRequired)
+                parentLabel.Attributes.Add("class", "required input");
+            else
+                parentLabel.Attributes.Add("class", "input");
             if (htmlAttributes != null)
-                tag.MergeAttributes(new RouteValueDictionary(htmlAttributes));
+                parentLabel.MergeAttributes(new RouteValueDictionary(htmlAttributes));
 
-            var span = new TagBuilder("span");
+            parentLabel.InnerHtml = span.ToString() + input.ToString();
 
-            // assign label text and <span> to <label> inner html
-            tag.InnerHtml = labelText + span.ToString(TagRenderMode.Normal);
-
-            return MvcHtmlString.Create(tag.ToString(TagRenderMode.Normal));
+            return MvcHtmlString.Create(parentLabel.ToString(TagRenderMode.Normal));
         }
 
         public static MvcHtmlString ScriptInclude(this HtmlHelper helper, string url, object htmlAttributes = null)

@@ -47,6 +47,14 @@
       <HintPath>..\packages\dotless.1.4.4\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlBuilders, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlBuilders.2.0.3\lib\net45\HtmlBuilders.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -134,6 +142,7 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\TextBoxHelper.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -175,6 +184,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Skills\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Confirm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

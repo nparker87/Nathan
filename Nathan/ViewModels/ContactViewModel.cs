@@ -9,16 +9,16 @@
             CurrentTab = "Contact";
         }
 
-        [DisplayName("First name:")]
-        public string FirstName { get; set; }
+        [DisplayName("Name")]
+        public string Name { get; set; }
 
-        [DisplayName("Last name:")]
-        public string LastName { get; set; }
-
-        [DisplayName("Email:")]
+        [DisplayName("Email")]
         public string Email { get; set; }
 
-        [DisplayName("Message:")]
+        [DisplayName("Subject")]
+        public string Subject { get; set; }
+
+        [DisplayName("Message")]
         public string Message { get; set; }
     }
 }

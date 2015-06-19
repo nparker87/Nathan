@@ -13,6 +13,7 @@
 
             bundles.Add(new ScriptBundle("~/Scripts").Include(
                 "~/Scripts/jquery-{version}.js",
+                "~/Scripts/TextBoxHelper.js",
                 "~/Scripts/Site.js"));
         }
     }

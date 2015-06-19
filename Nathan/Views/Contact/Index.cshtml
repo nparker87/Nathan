@@ -10,24 +10,17 @@
         <li>
             <fieldset>
                 <ul>
+                    @Html.TextBoxFor(model => Model.Name)
                     <li>
-                        @Html.RequriedLabelFor(model => model.Email)
-                        @Html.TextBoxFor(mdoel => Model.Email)
+                        @Html.InputFor(model => model.Email, true, false)
                         @Html.ValidationMessageFor(model => model.Email)
                     </li>
                     <li>
-                        @Html.RequriedLabelFor(model => model.FirstName)
-                        @Html.TextBoxFor(mdoel => Model.FirstName)
-                        @Html.ValidationMessageFor(model => model.FirstName)
+                        @Html.InputFor(model => model.Name, true, false)
+                        @Html.ValidationMessageFor(model => model.Name)
                     </li>
                     <li>
-                        @Html.RequriedLabelFor(model => model.LastName)
-                        @Html.TextBoxFor(mdoel => Model.LastName)
-                        @Html.ValidationMessageFor(model => model.LastName)
-                    </li>
-                    <li>
-                        @Html.RequriedLabelFor(model => model.Message)
-                        @Html.TextAreaFor(mdoel => Model.Message)
+                        @Html.InputFor(model => model.Message, true, true)
                         @Html.ValidationMessageFor(model => model.Message)
                     </li>
                     <li class="center">

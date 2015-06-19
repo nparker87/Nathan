@@ -63,22 +63,58 @@ nav ul li.selected a {
 #main {
     background-color: #FFFFFF;
     color: #000000;
-    padding: 5px 150px;
+    padding: 5px 0;
 }
 
 #main h2 {
     text-align: center;
 }
 
-#main ul li {
-    padding: 5px;
+#main ul li fieldset {
+    width: 30%;
 }
 
-#main ul li label {
-    float: left;
-    padding-right: 5px;
-    text-align: right;
-    width: 95px;
+#main ul li fieldset ul li {
+    padding: 10px;
+}
+
+.input {
+    display: block;
+}
+
+.input span {
+    position: absolute;
+    z-index: 1;
+    cursor: text;
+    pointer-events: none;
+    color: #999;
+    /* Input padding + input border */
+    padding: 7px;
+    /* Firefox does not respond well to different line heights. Use padding instead. */
+    line-height: 17px;
+    /* This gives a little gap between the cursor and the label */
+    margin-left: 2px;
+}
+
+.input input, .input select {
+    z-index: 0;
+    padding: 6px;
+    margin: 0;
+    font: inherit;
+    line-height: 17px;
+}
+
+.input textarea {
+    font: inherit;
+    line-height: 17px;
+    margin: 0;
+    padding: 6px;
+    width: 300px;
+    z-index: 0;
+}
+
+li input[type="submit"] {
+    margin-top: 10px;
 }
 
 /**** Footer ****/
@@ -88,12 +124,6 @@ footer {
 }
 
 /**** Misc ****/
-label.required span:after {
-    color: #FF0000;
-    content: "*";
-    font-weight: bold;
-}
-
 .center {
     text-align: center;
 }
@@ -111,6 +141,12 @@ label.required span:after {
 }
 
 /* Styles for validation helpers */
+label.required span:after {
+    color: #FF0000;
+    content: " *";
+    font-weight: bold;
+}
+
 .field-validation-error {
     color: #FF0000;
 }
