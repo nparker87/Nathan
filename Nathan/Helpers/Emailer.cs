@@ -23,6 +23,7 @@
             var msg = new MailMessage
             {
                 To = { new MailAddress("wshcaps1987@gmail.com") },
+                From = fromAddress,
                 Body = body,
                 IsBodyHtml = true,
                 Priority = MailPriority.Normal,

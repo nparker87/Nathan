@@ -73,7 +73,12 @@
             var htmlFieldName = ExpressionHelper.GetExpressionText(expression);
             var labelText = metadata.DisplayName ?? metadata.PropertyName ?? htmlFieldName.Split('.').Last();
             var span = new HtmlTag("span").Append(labelText);
-            var input = isTextArea ? new HtmlTag("textarea") : new HtmlTag("input").Type("text");
+            var input = isTextArea
+                ? new HtmlTag("textarea")
+                : new HtmlTag("input").Type("text");
+
+            input.Id(htmlFieldName);
+            input.Name(htmlFieldName);
 
             if (String.IsNullOrEmpty(labelText))
             {

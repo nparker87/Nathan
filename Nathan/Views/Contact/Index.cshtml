@@ -10,7 +10,6 @@
         <li>
             <fieldset>
                 <ul>
-                    @Html.TextBoxFor(model => Model.Name)
                     <li>
                         @Html.InputFor(model => model.Email, true, false)
                         @Html.ValidationMessageFor(model => model.Email)

@@ -8,10 +8,7 @@
     {
         public ActionResult Index()
         {
-            var viewModel = new ContactViewModel
-            {
-                CurrentTab = "Contact"
-            };
+            var viewModel = new ContactViewModel();
             return View(viewModel);
         }
 
@@ -25,6 +22,12 @@
                 submission.Message,                             // Email body
                 null,                                           // cc
                 null);                                          // bcc
+            return View("Confirm");
+        }
+
+        public ActionResult Confirm()
+        {
+            var viewModel = new ContactViewModel();
             return View("Confirm");
         }
     }

@@ -2,7 +2,10 @@
     ViewBag.Title = "Confirm";
 }
 
-<h2>Confirm</h2>
-<p>
-    Your email has been sent. Thank you for your message! I will respond within a couple of days and look forward to talking with you more!
-</p>
+@using (Html.BeginForm())
+{
+    <h2>Confirm</h2>
+    <p>
+        Your email has been sent. Thank you for your message! I will respond within a couple of days and look forward to talking with you more!
+    </p>
+}

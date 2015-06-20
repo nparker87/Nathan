@@ -7,10 +7,7 @@
     {
         public ActionResult Index()
         {
-            var viewModel = new BaseViewModel
-            {
-                CurrentTab = "Skills"
-            };
+            var viewModel = new BaseViewModel();
             return View(viewModel);
         }
     }
