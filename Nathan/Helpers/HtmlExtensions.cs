@@ -1,6 +1,5 @@
 ﻿namespace Nathan.Helpers
 {
-    using HtmlBuilders;
     using System;
     using System.Linq;
     using System.Linq.Expressions;
@@ -8,6 +7,7 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using HtmlBuilders;
 
     public static class HtmlExtensions
     {
@@ -86,9 +86,13 @@
             }
 
             if (isRequired)
-                parentLabel.Attributes.Add("class", "required input");
+            {
+                parentLabel.Attributes.Add("class", "input required");
+                input.Class("required");
+            }
             else
                 parentLabel.Attributes.Add("class", "input");
+
             if (htmlAttributes != null)
                 parentLabel.MergeAttributes(new RouteValueDictionary(htmlAttributes));
 

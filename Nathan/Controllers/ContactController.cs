@@ -1,7 +1,7 @@
 ﻿namespace Nathan.Controllers
 {
-    using Nathan.Helpers;
     using System.Web.Mvc;
+    using Nathan.Helpers;
     using ViewModels;
 
     public class ContactController : BaseController
@@ -15,14 +15,20 @@
         [HttpPost]
         public ActionResult Index(ContactViewModel submission)
         {
-            Emailer.SendMsg(
-                submission.Email,                               // From email
-                submission.Name,                                // From name
-                submission.Subject,                             // Subject
-                submission.Message,                             // Email body
-                null,                                           // cc
-                null);                                          // bcc
-            return View("Confirm");
+            if (ModelState.IsValid)
+            {
+                Emailer.SendMsg(
+                    submission.Email, // From email
+                    submission.Name, // From name
+                    submission.Subject, // Subject
+                    submission.Message, // Email body
+                    null, // cc
+                    null); // bcc
+                return View("Confirm");
+            }
+
+            var viewModel = new ContactViewModel();
+            return View(viewModel);
         }
 
         public ActionResult Confirm()
