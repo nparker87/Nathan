@@ -9,6 +9,7 @@
             // BundleTable.EnableOptimizations = true;
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
                 "~/Content/Less/Site.less"));
 
             bundles.Add(new ScriptBundle("~/Scripts").Include(

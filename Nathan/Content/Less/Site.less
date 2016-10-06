@@ -1,126 +1,40 @@
-﻿@mainGreen: #1D9053;
+﻿@main: #5EB1BF;
+@text: #FCFCFC;
 
 /**** Page Styles ****/
 html {
-    color: #FFFFFF;
-    font: 14px Trebuchet MS, Arial, Helvetica, sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-html a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-html a:hover {
-    color: #0000EE;
+    background-color: #071E22;
+    height: 95%;
+    padding: 0 10% 0 10%;
 }
 
 body {
-    background-color: @mainGreen;
+    color: @text;
+    background-color: @main;
+    height: 100%;
+    position: relative;
 }
 
-ul {
-    list-style: none;
-}
-
-/**** Navigation ****/
 nav ul {
-    font-size: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    font-size: 21px;
-}
-
-nav ul li.selected,
-nav ul li:hover {
-    background-color: #FFFFFF;
-}
-
-nav ul li:hover a {
-    color: #000000;
-}
-
-nav ul li a {
-    display: block;
-    padding: 5px 15px 10px 15px;
-}
-
-nav ul li.selected a {
-    color: #000000;
-}
-
-/**** Main Content ****/
-#wrapper {
-    padding: 0 10%;
-}
-
-#main {
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 5px 0;
-}
-
-#main h2 {
-    text-align: center;
-}
-
-#main ul li fieldset {
-    width: 30%;
-}
-
-#main ul li fieldset ul li {
-    padding: 10px;
-}
-
-.input {
-    display: block;
-}
-
-.input span {
-    position: absolute;
-    z-index: 1;
-    cursor: text;
-    pointer-events: none;
-    color: #999;
-    /* Input padding + input border */
-    padding: 7px;
-    /* Firefox does not respond well to different line heights. Use padding instead. */
-    line-height: 17px;
-    /* This gives a little gap between the cursor and the label */
-    margin-left: 2px;
-}
-
-.input input, .input select {
-    z-index: 0;
-    padding: 6px;
+    list-style-type: none;
     margin: 0;
-    font: inherit;
-    line-height: 17px;
+    padding: 0;
+}
+    nav ul li {
+        background-color: @text;
+        float: right;
+        padding: 5px;
+    }
+
+#main {    
+    padding: 2% 10% 0 10%;
 }
 
-.input textarea {
-    font: inherit;
-    line-height: 17px;
-    margin: 0;
-    padding: 6px;
-    width: 300px;
-    z-index: 0;
-}
-
-li input[type="submit"] {
-    margin-top: 10px;
-}
-
-/**** Footer ****/
 footer {
-    padding-top: 50px;
+    bottom: 0;
+    position: absolute;
     text-align: center;
+    width: 100%;
 }
 
 /**** Misc ****/
